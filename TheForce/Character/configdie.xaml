@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage Title="Select Die"
+    xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="TheForce.Character.configdie">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Done" Clicked="done_Clicked"/>
+    </ContentPage.ToolbarItems>
+    <ContentPage.Content>
+        <StackLayout Margin="20">
+            <Label Text="Base Die"/>
+            <ListView x:Name="basedie"
+                      SelectionMode="Single">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <TextCell TextColor="Black"
+                                  Text="{Binding Name}"
+                                  DetailColor="Black"
+                                  Detail="{Binding Facenum}"/>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+            <Label Text="Upgraded Die"/>
+            <ListView x:Name="upgradedie"
+                      SelectionMode="Single">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <TextCell TextColor="Black"
+                                  Text="{Binding Name}"
+                                  DetailColor="Black"
+                                  Detail="{Binding Facenum}"/>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

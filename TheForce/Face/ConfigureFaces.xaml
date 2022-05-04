@@ -1,0 +1,105 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             Title="Configure Faces"
+             x:Class="TheForce.Dice.ConfigureFaces">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Faces"
+                     Clicked="configpool"/>
+    </ContentPage.ToolbarItems>
+    <ContentPage.Content>
+        <Grid Margin="20">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="auto"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Label Text="Die Name"
+                   HorizontalOptions="Center"
+                   VerticalOptions="Center"
+                   FontSize="Large"/>
+            <Label Text="{Binding Name}"
+                   Grid.Column="1"
+                   HorizontalOptions="Center"
+                   VerticalOptions="Center"
+                   FontSize="Large"/>
+            <Label Text="Number of Faces"
+                   HorizontalOptions="Center"
+                   VerticalOptions="Center"
+                   FontSize="Large"
+                   Grid.Row="1"/>
+            <Label Text="{Binding Facenum}"
+                   x:Name="facelabel"
+                   Grid.Column="1"
+                   Grid.Row="1"
+                   HorizontalOptions="Center"
+                   VerticalOptions="Center"
+                   FontSize="Large"/>
+            <Label Text="Numeric"
+                   Grid.Row="2"
+                   HorizontalOptions="Center"
+                   VerticalOptions="Center"
+                   FontSize="Large"/>
+            <CheckBox Color="Black"
+                      IsChecked="{Binding numeric}"
+                      Grid.Column="1"
+                      Grid.Row="2"
+                      x:Name="numeric"
+                      CheckedChanged="numeric_CheckedChanged"/>
+            <Label Text="Die Faces"
+                   FontSize="Medium"
+                   Grid.Row="3"/>
+            <ListView Grid.Row="4"
+                      x:Name="facelist"
+                      SelectionMode="Single"
+                      HorizontalOptions="Center">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout Orientation="Horizontal">
+                                <Label Text="{Binding ID}"
+                                       FontSize="Small"/>
+                                <Label Text="{Binding Faces}"
+                                       FontSize="Small"/>
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+            <Label Text="Available Faces"
+                   FontSize="Medium"
+                   Grid.Row="3"
+                   Grid.Column="1"
+                   HorizontalOptions="Center"/>
+            <ListView Grid.Row="4"
+                      Grid.Column="1"
+                      x:Name="facepool"
+                      SelectionMode="None"
+                      ItemTapped="facepool_ItemTapped">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <TextCell Text="{Binding Name}"
+                                  TextColor="Black"/>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+            <Button Text="Reset Face"
+                    Grid.Row="5"
+                    x:Name="Reset"
+                    Clicked="Reset_Clicked"
+                    Grid.Column="1"/>
+            <Button Text="Save and Continue"
+                    Grid.Row="5"
+                    Grid.Column="0"
+                    x:Name="Save"
+                    Clicked="Save_Clicked"/>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

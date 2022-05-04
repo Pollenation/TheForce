@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage Title="Configuration"
+    xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="TheForce.Character.SheetConfig">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="+Skill" x:Name="add" Clicked="add_Clicked"/>
+        <ToolbarItem Text="+Att" x:Name="addAtt" Clicked="addAtt_Clicked"/>
+    </ContentPage.ToolbarItems>
+    <ContentPage.Content>
+        <Grid Margin="20">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height=".5*"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="auto"/>
+            </Grid.RowDefinitions>
+            <Label Text="Attributes" FontSize="Large"/>
+            <ListView x:Name="att" Grid.Row="1" SelectionMode="None" ItemTapped="att_ItemTapped">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <TextCell Text="{Binding Name}"
+                                  TextColor="Black"
+                                  Detail="{Binding Level}"
+                                  DetailColor="Black"/>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+            <Label Text="Skills" Grid.Row="2" FontSize="Large"/>
+            <ListView x:Name="skill" Grid.Row="3" SelectionMode="None" ItemTapped="skill_ItemTapped">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <TextCell Text="{Binding Name}"
+                                  TextColor="Black"
+                                  Detail="{Binding Level}"
+                                  DetailColor="Black"/>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+            <Button x:Name="Select" Text="Select Dice" Clicked="Select_Clicked" Grid.Row="4"/>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

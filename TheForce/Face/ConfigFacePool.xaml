@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             Title="Available Faces"
+             x:Class="TheForce.Face.ConfigFacePool">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="+"
+                     Clicked="newface"/>
+    </ContentPage.ToolbarItems>
+    <ContentPage.Content>
+        <StackLayout Margin="20">
+            <ListView x:Name="facepool"
+                      SelectionMode="None"
+                      ItemTapped="changeface">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <TextCell TextColor="Black"
+                                  Text="{Binding Name}"
+                                  Detail="{Binding OpFace}"
+                                  DetailColor="Blue"/>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

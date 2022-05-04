@@ -1,0 +1,100 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             Title="The Force"
+             x:Class="TheForce.MasterNav">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Set"
+                     Clicked="Set_clicked"/>
+        <ToolbarItem Text="Dice"
+                     Clicked="OpenConfig">
+        </ToolbarItem>
+    </ContentPage.ToolbarItems>
+    <ContentPage.Content>
+        <Grid Margin="20">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="auto" />
+        </Grid.RowDefinitions>
+        <Label Text="Available Die"
+               VerticalOptions="Center"
+               HorizontalOptions="Start"/>
+        <ListView x:Name="DieList"
+                  ItemTapped="DieAdd"
+                  Grid.Row="1"
+                  SelectionMode="None">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout Orientation="Horizontal">
+                                <Image Source="{Binding Image}"/>
+                                <Label Text="{Binding Name}"
+                                       TextColor="Black"/>
+                                <Label Text="{Binding Facenum}"
+                                       TextColor="Black"/>
+                            </StackLayout>
+                            
+                        </ViewCell>
+                        <!--TextCell Text="{Binding Name}"
+                                  Detail="{Binding Facenum}"
+                                  TextColor="Black"/-->
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+        </ListView>
+        <Label Text="Die to Roll"
+               VerticalOptions="Center"
+               Grid.Column="1"
+               HorizontalOptions="Start"/>
+        <ListView x:Name="ToRollList"
+                  Grid.Column="1"
+                  Grid.Row="1"
+                  SelectionMode="None"
+                  ItemTapped="DeleteDie">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <TextCell Text="{Binding Name}"
+                              Detail="{Binding Quantity}"
+                                  TextColor="Black"/>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+        <Label Text="All Results" Grid.Row="2"/>
+            <ListView x:Name="results"
+                      Grid.Row="3"
+                      SelectionMode="None">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <TextCell Text="{Binding Name}"
+                                  TextColor="Black"
+                                  Detail="{Binding Quantity}"
+                                  DetailColor="Black"/>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        <Label Text="Calculated Results" Grid.Row="2" Grid.Column="1"/>
+            <ListView x:Name="calcresults"
+                      Grid.Row="3"
+                      Grid.Column="1"
+                      SelectionMode ="None">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <TextCell Text="{Binding Name}"
+                                  TextColor="Black"
+                                  Detail="{Binding Quantity}"
+                                  DetailColor="Black"/>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+
+            <Button Text="Roll Dice" Grid.Row="4" Clicked="Roll_Clicked"/>
+            <Button Text="Character Sheet" Grid.Row="4" Grid.Column="1" x:Name="char" Clicked="char_Clicked" />
+    </Grid>
+    </ContentPage.Content>
+</ContentPage>

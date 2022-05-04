@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage Title="Add Attribute"
+    xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="TheForce.Character.AddAtt">
+    <ContentPage.Content>
+        <Grid Margin="20">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="auto"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Label Text="Name" Grid.ColumnSpan="2"/>
+            <Entry x:Name="name" Text="{Binding Name}" Grid.Row="1" Grid.ColumnSpan="2"/>
+            <Label Text="Level" Grid.Row="2" Grid.ColumnSpan="2"/>
+            <Entry x:Name="level" Text="{Binding Level}" Keyboard="Numeric" Grid.Row="3" Grid.ColumnSpan="2"/>
+            <Button x:Name="save" Text="Save" Clicked="save_Clicked" Grid.Row="5"/>
+            <Button x:Name="delete" Text="Delete" Clicked="delete_Clicked" Grid.Row="5" Grid.Column="1"/>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

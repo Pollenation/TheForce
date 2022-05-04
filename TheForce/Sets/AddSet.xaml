@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage Title="Add Set"
+    xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="TheForce.Sets.AddSet">
+    <ContentPage.Content>
+        <Grid Margin="35,20,20,20" >
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="auto"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Label Text="Name" Grid.ColumnSpan="2"/>
+            <Entry x:Name="name" Grid.Row="1" Grid.ColumnSpan="2" Text="{Binding Name}"/>
+            <Button Text="Save" Grid.Row="3" Clicked="Save"/>
+            <Button Text="Delete" Grid.Row="3" Grid.Column="1" Clicked="Delete"/>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

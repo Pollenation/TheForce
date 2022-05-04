@@ -1,0 +1,15 @@
+﻿[
+  {
+    "Die": {
+      "Name": "Green",
+      "Facenum": 8,
+      "Faces": [ "Success", "Success", "Success", "Success", "Failure", "Failure", "Failure", "Failure" ]
+    }
+  }, 
+  {
+    "Die": {
+      "Name": "Yellow",
+      "Facenum": 12
+    }
+  }
+]

@@ -1,0 +1,23 @@
+
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TheForce.Android", "TheForce.Android\TheForce.Android.csproj", "{C81BF04B-4EC3-431F-8B56-686792CD4052}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TheForce", "TheForce\TheForce.csproj", "{337A7160-DBFB-4029-AE03-EFC2925EE272}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C81BF04B-4EC3-431F-8B56-686792CD4052}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C81BF04B-4EC3-431F-8B56-686792CD4052}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C81BF04B-4EC3-431F-8B56-686792CD4052}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C81BF04B-4EC3-431F-8B56-686792CD4052}.Release|Any CPU.Build.0 = Release|Any CPU
+		{337A7160-DBFB-4029-AE03-EFC2925EE272}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{337A7160-DBFB-4029-AE03-EFC2925EE272}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{337A7160-DBFB-4029-AE03-EFC2925EE272}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{337A7160-DBFB-4029-AE03-EFC2925EE272}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,56 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             Title="Add Die"
+             x:Class="TheForce.Dice.AddDice">
+    <ContentPage.Content>
+        <Grid Margin="35,20,20,20" >
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="auto"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Label Text="Name" Grid.Row="0"/>
+            <Entry Keyboard="Default"
+                   x:Name="Name"
+                   Text="{Binding Name}"
+                   Grid.Row="1"
+                   Grid.ColumnSpan="2"/>
+            <Label Text="Number of Faces"
+                   Grid.Row="2" Grid.ColumnSpan="2"/>
+            <Entry Keyboard="Numeric"
+                   x:Name="Faces"
+                   Text="{Binding Facenum}"
+                   Grid.Row="3" Grid.ColumnSpan="2"/>
+            <Label Text="Image"
+                   Grid.Row="4"/>
+            <!--image selector-->
+            <Label Text="Set" Grid.Row="6" Grid.ColumnSpan="2"/>
+            <ListView Grid.Row="7" Grid.ColumnSpan="2"
+                      SelectionMode="Single" x:Name="setlist">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <TextCell Text="{Binding Name}"
+                                  TextColor="Black"/>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+            <Button Text="Save and Continue"
+                    Clicked="ConfigFace"
+                    Grid.Row="8"/>
+            <Button Text="Delete"
+                    Clicked="DeleteDie"
+                    x:Name="Delete" Grid.Row="8" Grid.Column="1"/>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>
